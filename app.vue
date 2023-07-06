@@ -15,8 +15,8 @@ const darkMode = ref(false)
             </div>
           </div>
           <!--        MAIN CONTENT-->
-          <main class="col-span-12 md:col-span-8 xl:col-span-6 bg-red-400">
-            <H1>Test</H1>
+          <main class="col-span-12 md:col-span-8 xl:col-span-6 ">
+            <NuxtPage/>
           </main>
           <!--        RIGHT SIDEBAR-->
           <div class="hidden md:block col-span-12  md:col-span-3 xl:col-span-4">
