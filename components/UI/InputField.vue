@@ -1,0 +1,34 @@
+<script setup lang="ts">
+defineProps({
+  label: {
+    type: String,
+    default: null
+  },
+  value: {
+    type: String,
+    required: true
+  } ,
+  placeholder: {
+    type: String,
+    default: ""
+  },
+  type: {
+    type: String,
+    default: "text"
+  },
+})
+</script>
+
+<template>
+<div>
+  <label v-if="label"
+         class="block pl-3 ml-px text-sm font-medium text-gray-700"
+
+  >{{ label }}</label>
+  <input :type="type" :value="value" class="block px-4 w-full border-gray-300 rounded-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" :placeholder="placeholder"/>
+</div>
+</template>
+
+<style scoped>
+
+</style>
