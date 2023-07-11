@@ -19,7 +19,9 @@ export default defineEventHandler(async (event) => {
   // Is the user registered
   const user = await getUserByUserName(username)
   // Compare passwords
+
   const passwordMatch = await bcrypt.compare(password, user.password)
+
   if (!passwordMatch)
   {
       return sendError(event, createError({

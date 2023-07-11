@@ -28,7 +28,7 @@ export const generateTokens = (user: User) => {
 
 export const sendRefreshToken = (event: H3Event, token: string) => {
     // @ts-ignore
-    setCookie(event.res, "refresh_token", token, {
+    setCookie(event, "refresh_token", token, {
         httpOnly: true,
         sameSite: true
     })

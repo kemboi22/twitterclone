@@ -12,13 +12,13 @@ interface User {
     profileImage?: String
 }
 
-export const createUser = (userdata: User) => {
+export const createUser = async (userdata: User) => {
     const finalUserData = {
         ...userdata,
-        password: bcrypt.hashSync(userdata.password, 10)
+        password: await bcrypt.hashSync(userdata.password, 10)
     }
     return prisma.user.create({
-        data: userdata
+        data: finalUserData
     })
 }
 
