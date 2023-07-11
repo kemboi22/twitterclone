@@ -35,3 +35,12 @@ export const sendRefreshToken = (event: H3Event, token: string) => {
 
 }
 
+export const decodeRefreshToken = (token: string) => {
+    try {
+        const config = useRuntimeConfig()
+
+        return jwt.verify(token, config.jwtRefreshSecret)
+    }catch (e) {
+        return e
+    }
+}

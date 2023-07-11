@@ -2,7 +2,10 @@
 import useAuth from "~/composables/useAuth";
 
 const darkMode = ref(false)
-const {useAuthUser} = useAuth()
+const {useAuthUser, initAuth} = useAuth()
+onBeforeMount(() => {
+  initAuth()
+})
 
 const user = useAuthUser()
 </script>
